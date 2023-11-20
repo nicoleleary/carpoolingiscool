@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Image Display</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        img {
+            height: 100vh; /* Full height of the viewport */
+            width: 100vw; /* Full width of the viewport */
+            object-fit: cover; /* Cover the viewport while maintaining aspect ratio */
+            position: fixed; /* Fix the position */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+
+    <img id="randomImage" src="" alt="Random Image">
+
+    <script>
+        var images = [
+            "https://i.ibb.co/LpCcxJ7/Untitled-9.png",
+            "https://i.ibb.co/g6X4DB3/Untitled-8.png"
+        ];
+
+        function displayRandomImage() {
+            var randomIndex = Math.floor(Math.random() * images.length);
+            document.getElementById('randomImage').src = images[randomIndex];
+        }
+
+        // Display a random image when the page loads
+        window.onload = displayRandomImage;
+    </script>
+
+</body>
+</html>
